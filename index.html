@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Scissors Paper Game</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Rock Scissors Paper</h1>
+    </header>
+
+    <div class="score-board"> 
+        <div id="user-label" class="badge">player</div>
+        <div id="computer-label" class="badge">computer</div>
+        <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div>
+
+    <div class="result">Your game result is here.  Press "Restart Game" button to play again.</div>
+
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="img/rock.png" alt="">
+            <h3 id="rockOption">Rock</h3> 
+        </div>
+        <div class="choice" id="scissors">
+            <img src="img/scissors.png" alt="">
+            <h3 id="scissorsOption">Scissors</h3> 
+        </div>
+        <div class="choice" id="paper">
+            <img src="img/paper.png" alt="">
+            <h3 id="paperOption">Paper</h3> 
+        </div>
+        
+    </div>
+    
+    <h3 id="message">Pick One</h3>
+    <button class="restart-btn">Restart Game</button>
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: goldenrod;
+}
+
+header {
+    background-color: white;
+    margin: 20px;
+}
+
+header > h1 {
+    color: rebeccapurple;
+    text-align: center;
+    font: san-serif;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    height: 30%;
+    
+    border: 3px solid rebeccapurple;
+    margin: 20px auto;
+    width: 400px;
+    border-radius: 50%;
+    text-align: center;
+    
+    color: white;
+    font-size: 20px;
+    padding: 15px 20px;
+    position: relative; 
+
+}
+
+.badge {
+    background: white;
+    color: rebeccapurple;
+    font-size: 20px;
+}
+#user-label {
+    position: absolute;
+    top: 20px;
+    left: -25px;
+    border: 2px solid rebeccapurple;
+}
+#computer-label {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    border: 2px solid rebeccapurple;
+}
+
+.result {
+    font-size: 20px;
+    color: rebeccapurple;
+    text-align:center;
+}
+
+
+.choices {
+margin: 50px 0;
+text-align: center;
+}
+
+.choice {
+    border: 4px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.choice:hover {
+    cursor: pointer;
+    background: teal;
+}
+#message {
+    font-size: 20px;
+    color: rebeccapurple;
+    text-align: center
+}
+
+#rockOption {
+    color: rebeccapurple;
+}
+
+#scissorsOption {
+    color: rebeccapurple;
+}
+
+#paperOption {
+    color: rebeccapurple;
+}
+
+.restart-btn {
+    background-color: white;
+    color: rebeccapurple;
+    position: relative;
+    left: 450px;
+    bottom: -10px;
+    border: 2px solid rebeccapurple;
+}
+.restart-btn:hover {
+    cursor: pointer;
+    background: teal;
+}
