@@ -1,5 +1,5 @@
-//This game a player and computer compete with random selection of rock, scissors, 
-//or paper by computer.  
+//Two players compete in this game with random selection of gold, silver, 
+//or copper by computer.  
 //There are 9 possible outcomes of winning, losing, and tie.
 
 //set variables and cache the DOM
