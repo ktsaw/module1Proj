@@ -1,5 +1,5 @@
 //Two players compete in this game with random selection of gold, silver, 
-//or copper by computer.  
+//or copper by computer.  20, 10, and 5 points for gold, silver, and copper respectively.  
 //There are 9 possible outcomes of winning, losing, and tie.
 
 //set variables and cache the DOM
