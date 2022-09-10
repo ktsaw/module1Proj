@@ -20,7 +20,7 @@ document.body.appendChild(input);               //insert textbox
 
 const label = document.createElement("label");   //create label
 label.setAttribute("for", "username");
-label.innerHTML = "Player Name: ";
+//label.innerHTML = "Player Name: ";
 const usernameText = document.getElementById("username");
 document.body.insertBefore(label, usernameText);
 
@@ -37,7 +37,7 @@ function userWin(userPick, computerPick) {            //function for the win cas
     
     userScoreSpanTag.innerHTML = userScore;
     computerScoreSpanTag.innerHTML = computerScore;
-    resultDiv.innerHTML = `${userPick} is more valuable than ${computerPick}.  ${usernameText.value} wins :-)`;
+    resultDiv.innerHTML = `${userPick} is > than ${computerPick}.  ${usernameText.value} wins :-)`;
     
 }
 function computerWin(userPick, computerPick) {             //function for the lose cases for a user
@@ -45,7 +45,7 @@ function computerWin(userPick, computerPick) {             //function for the lo
 
     userScoreSpanTag.innerHTML = userScore;
     computerScoreSpanTag.innerHTML = computerScore;
-    resultDiv.innerHTML = `${userPick} loses to ${computerPick}.  ${usernameText.value} loses this time :-(`;
+    resultDiv.innerHTML = `${userPick} is < than ${computerPick}.  Better luck next time ${usernameText.value} :-(`;
 }
 
 function tie(userPick, computerPick) {              //function for the tie cases

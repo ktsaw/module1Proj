@@ -97,7 +97,7 @@ text-align: center;
     background-color: white;
     color: rebeccapurple;
     position: relative;
-    left: 650px;
+    left: 950px;
     bottom: -10px;
     border: 2px solid rebeccapurple;
 }
@@ -106,3 +106,6 @@ text-align: center;
     background: teal;
 }
 
+#label {
+    color: rebeccapurple;
+}
