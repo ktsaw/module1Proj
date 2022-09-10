@@ -1,96 +1,122 @@
 //This game a player and computer compete with random selection of rock, scissors, 
 //or paper by computer.  
-//There are 9 scenarios of winning, losing, and tie.
+//There are 9 possible outcomes of winning, losing, and tie.
 
-//caching the DOM
+//set variables and cache the DOM
 let scoreBoardDiv = document.querySelector(".score-board");
 let userScore = 0;
 let computerScore = 0;
 let userScoreSpanTag = document.getElementById("user-score");
 let computerScoreSpanTag = document.getElementById("computer-score");
 let resultDiv = document.querySelector(".result");
-let rockDiv = document.querySelector("#rock");
-let scissorsDiv = document.querySelector("#scissors");
-let paperDiv = document.querySelector("#paper");
+let goldDiv = document.querySelector("#gold");
+let silverDiv = document.querySelector("#silver");
+let copperDiv = document.querySelector("#copper");
 
+const input = document.createElement("input");   //create textbox
+input.setAttribute("id", "username");
+input.setAttribute("type", "text");
+document.body.appendChild(input);               //insert textbox
 
-function getComputerPick() {
-    let arrChoices = ['rock', 'scissors', 'paper'];
-    let randomPick = Math.floor(Math.random() * 3);
-    return arrChoices [randomPick];
+const label = document.createElement("label");   //create label
+label.setAttribute("for", "username");
+label.innerHTML = "Player Name: ";
+const usernameText = document.getElementById("username");
+document.body.insertBefore(label, usernameText);
+
+usernameText.setAttribute("placeholder", "input your name here")
+
+function getComputerPick() {                            //get random choices from computer
+    let arrChoices = ['gold', 'silver', 'copper'];
+    let randomPick = arrChoices[Math.floor(Math.random() * arrChoices.length)];
+    return arrChoices = [randomPick];
 }
 //console.log(getComputerPick())
 
-function winScenario(userPick, computerPick) {
-    userScore++;
+function userWin(userPick, computerPick) {            //function for the win cases
+    
     userScoreSpanTag.innerHTML = userScore;
     computerScoreSpanTag.innerHTML = computerScore;
-    resultDiv.innerHTML = `${userPick} beats ${computerPick}. You win :-)`;
+    resultDiv.innerHTML = `${userPick} is more valuable than ${computerPick}.  ${usernameText.value} wins :-)`;
     
 }
+function computerWin(userPick, computerPick) {             //function for the lose cases for a user
 
-function loseScenario(userPick, computerPick) {
-    computerScore++;
+
     userScoreSpanTag.innerHTML = userScore;
     computerScoreSpanTag.innerHTML = computerScore;
-    resultDiv.innerHTML = `${userPick} loses to ${computerPick}. You lost :-(`;
+    resultDiv.innerHTML = `${userPick} loses to ${computerPick}.  ${usernameText.value} loses this time :-(`;
 }
 
-function tieScenario(userPick, computerPick) {
+function tie(userPick, computerPick) {              //function for the tie cases
     resultDiv.innerHTML = `${userPick} is same as ${computerPick}. It's a tie.`;
 }
-function game(userPick) {
-
+function play(userPick) {
     let compPick = getComputerPick();
     //console.log(`computerPick ${compPick}`)
     let pick = `${userPick} ${compPick}`
     //console.log(`userPick ${userPick}`)
-    switch(pick) {
-        case "rock scissors":
-            winScenario(userPick, compPick)
+
+    switch(pick) {                              //9 possible cases for the game played between player and computer
+        case "gold silver":
+            userScore+=20;
+            computerScore-=10;
+            userWin(userPick, compPick)
             break;
-        case "paper rock":
-            winScenario(userPick, compPick);
+        case "gold copper":
+            userScore+=20;
+            computerScore-=5
+            userWin(userPick, compPick);
             break;
-        case "scissors paper":
-            winScenario(userPick, compPick);
+        case "silver copper":
+            userScore+=10;
+            computerScore-=5
+            userWin(userPick, compPick);
             break;
-        case "rock paper":
-            loseScenario(userPick, compPick);
+        case "silver gold":
+            userScore-=10;
+            computerScore+=20;
+            computerWin(userPick, compPick);
             break;
-        case "paper scissors":
-            loseScenario(userPick, compPick);
+        case "copper gold":
+           
+            userScore-=5;
+            computerScore+=20;
+            computerWin(userPick, compPick);
             break;
-        case "scissors rock":
-            loseScenario(userPick, compPick);
+        case "copper silver":
+            
+            userScore-=5;
+            computerScore+=10;
+            computerWin(userPick, compPick);
             break;
-        case "rock rock":
-            tieScenario(userPick, compPick)
+        case "gold gold":
+            tie(userPick, compPick)
             break;
-        case "paper paper":
-            tieScenario(userPick, compPick)
+        case "silver silver":
+            tie(userPick, compPick)
             break;
-        case "scissors scissors":
-            tieScenario(userPick, compPick);
+        case "copper copper":
+            tie(userPick, compPick);
             break;
             //console.log(`last case`)
     }
 }
 
-function main() {
-    rockDiv.addEventListener('click', function() {
+function playGame() {                                   //attach eventListener method to variable when click
+    goldDiv.addEventListener('click', function() {
 
-        game("rock");
+        play("gold");
     })
 
-    scissorsDiv.addEventListener("click", function() {
+    silverDiv.addEventListener("click", function() {
         
-        game("scissors");
+        play("silver");
     })
 
-    paperDiv.addEventListener("click", function() {
+    copperDiv.addEventListener("click", function() {
         
-        game("paper");
+        play("copper");
     })
 }
 document.querySelector('.restart-btn').addEventListener('click', function(){
@@ -98,4 +124,4 @@ document.querySelector('.restart-btn').addEventListener('click', function(){
     return false;
 })
 
-main();
+playGame();  //calling function to play game

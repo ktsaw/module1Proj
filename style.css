@@ -81,15 +81,15 @@ text-align: center;
     text-align: center
 }
 
-#rockOption {
+#goldOption {
     color: rebeccapurple;
 }
 
-#scissorsOption {
+#silverOption {
     color: rebeccapurple;
 }
 
-#paperOption {
+#copperOption {
     color: rebeccapurple;
 }
 
@@ -97,7 +97,7 @@ text-align: center;
     background-color: white;
     color: rebeccapurple;
     position: relative;
-    left: 450px;
+    left: 650px;
     bottom: -10px;
     border: 2px solid rebeccapurple;
 }
@@ -105,3 +105,4 @@ text-align: center;
     cursor: pointer;
     background: teal;
 }
+
